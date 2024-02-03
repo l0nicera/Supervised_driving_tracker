@@ -1,0 +1,15 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#baseData {
+  padding-bottom: 2rem;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

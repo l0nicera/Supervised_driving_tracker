@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LPDWCar - Statistiques</title>
+    <link rel="stylesheet" href="../css/main-layout.css" />
+    <link rel="stylesheet" href="../css/data-stats.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <hgroup>
+        <h1>LPDWCar</h1>
+        <p>Statisques des trajets</p>
+      </hgroup>
+    </header>
+    <main id="dataStatContent">
+      <article>
+        <header>
+          <h4>Retrouver ici l'analyse de toutes les données enregistrée</h4>
+        </header>
+        <!-- pas inspiré pour le nom -->
+        <section id="baseData" class="main-content">
+          <!-- Nombre de trajets effectués  -->
+          <div id="totalSessionContainer" class="data-container">
+            <img src="" alt="" id="totalSessionImg" />
+            <p id="totalSessionLabel">Nombre de session enregistrée</p>
+            <p id="totalSessionStat"></p>
+          </div>
+          <!-- Distance  -->
+
+          <h4>Distance</h4>
+          <section id="distanceStats" class="data-container">
+            <div id="totalDistanceContainer">
+              <img src="" alt="" id="totalDistanceImg" />
+              <p id="totalDistanceLabel">Distance totale</p>
+              <p id="totalDistanceStat"></p>
+            </div>
+            <div id="maxDistanceContainer">
+              <img src="" alt="" id="maxDistanceImg" />
+              <p id="maxDistanceLabel">Distance la plus longue</p>
+              <p id="maxDistanceStat"></p>
+            </div>
+            <div id="minDistanceContainer">
+              <img src="" alt="" id="minDistanceImg" />
+              <p id="minDistanceLabel">Distance la plus courte</p>
+              <p id="minDistanceStat"></p>
+            </div>
+            <div id="aveDistanceContainer">
+              <img src="" alt="" id="aveDistanceImg" />
+              <p id="aveDistanceLabel">Distance moyenne</p>
+              <p id="aveDistanceStat"></p>
+            </div>
+          </section>
+          <!-- Durée -->
+
+          <h4>Durée</h4>
+          <section id="durationStats" class="data-container">
+            <div id="totalDurationContainer">
+              <img src="" alt="" id="totalDurationImg" />
+              <p id="totalDurationLabel">Durée totale</p>
+              <p id="totalDurationStat"></p>
+            </div>
+            <div id="maxDurationContainer">
+              <img src="" alt="" id="maxDurationImg" />
+              <p id="maxDurationLabel">Durée la plus longue</p>
+              <p id="maxDurationStat"></p>
+            </div>
+            <div id="minDurationContainer">
+              <img src="" alt="" id="minDurationImg" />
+              <p id="minDurationLabel">Durée la plus courte</p>
+              <p id="minDurationStat"></p>
+            </div>
+            <div id="aveDurationContainer">
+              <img src="" alt="" id="aveDurationImg" />
+              <p id="aveDurationLabel">Durée moyenne</p>
+              <p id="aveDurationStat"></p>
+            </div>
+          </section>
+        </section>
+        <section id="conditionData" class="main-content">
+          <h4>Conduite de nuit</h4>
+          <section id="nightDrivingStats" class="data-container">
+            <!-- % de trajet avec  -->
+            <div id="nightDrivingContainer">
+              <img src="" alt="" id="nightDrivingImg" />
+              <p id="nightDrivingStat"></p>
+              <p id="nightDrivingCount"></p>
+            </div>
+          </section>
+
+          <h4>Dangers</h4>
+          <section id="hazardsStats" class="data-container">
+            <!-- % de trajet pour chaque danger -->
+            <div id="denseTrafficContainer">
+              <img src="" alt="" id="denseTrafficImg" />
+              <p id="denseTrafficLabel"></p>
+              <p id="denseTrafficStat"></p>
+            </div>
+            <div id="blackIceContainer">
+              <img src="" alt="" id="blackIceImg" />
+              <p id="blackIceLabel"></p>
+              <p id="blackIceStat"></p>
+            </div>
+            <div id="highWindsContainer">
+              <img src="" alt="" id="highWindsImg" />
+              <p id="highWindsLabel"></p>
+              <p id="highWindsStat"></p>
+            </div>
+            <div id="sinuousRoadContainer">
+              <img src="" alt="" id="sinuousRoadImg" />
+              <p id="sinuousRoadLabel"></p>
+              <p id="sinuousRoadStat"></p>
+            </div>
+          </section>
+
+          <h4>Meteo</h4>
+          <section id="weatherStats" class="data-container">
+            <!-- % de trajet pour chaque meteo -->
+            <div id="sunnyContainer">
+              <img src="" alt="" id="sunnyImg" />
+              <p id="sunnyLabel"></p>
+              <p id="sunnyStat"></p>
+            </div>
+            <div id="cloudyContainer">
+              <img src="" alt="" id="cloudyImg" />
+              <p id="cloudyLabel"></p>
+              <p id="cloudyStat"></p>
+            </div>
+            <div id="rainyContainer">
+              <img src="" alt="" id="rainyImg" />
+              <p id="rainyLabel"></p>
+              <p id="rainyStat"></p>
+            </div>
+            <div id="stormyContainer">
+              <img src="" alt="" id="stormyImg" />
+              <p id="stormyLabel"></p>
+              <p id="stormyStat"></p>
+            </div>
+            <div id="foggyContainer">
+              <img src="" alt="" id="foggyImg" />
+              <p id="foggyLabel"></p>
+              <p id="foggyStat"></p>
+            </div>
+            <div id="snowyContainer">
+              <img src="" alt="" id="snowyImg" />
+              <p id="snowyLabel"></p>
+              <p id="snowyStat"></p>
+            </div>
+          </section>
+          <h4>Typologie des routes empruntés</h4>
+          <section id="roadTypeStats" class="data-container">
+            <!-- % de trajet pour chaque route -->
+            <!-- nb de kms parcours sur chaque route -->
+            <div id="mainContainer">
+              <img src="" alt="" id="mainImg" />
+              <p id="mainLabel"></p>
+              <p id="mainStat"></p>
+              <p id="mainDistance"></p>
+            </div>
+            <div id="secondaryContainer">
+              <img src="" alt="" id="secondaryImg" />
+              <p id="secondaryLabel"></p>
+              <p id="secondaryStat"></p>
+              <p id="secondaryDistance"></p>
+            </div>
+            <div id="urbanContainer">
+              <img src="" alt="" id="urbanImg" />
+              <p id="urbanLabel"></p>
+              <p id="urbanStat"></p>
+              <p id="urbanDistance"></p>
+            </div>
+            <div id="ruralContainer">
+              <img src="" alt="" id="ruralImg" />
+              <p id="ruralLabel"></p>
+              <p id="ruralStat"></p>
+              <p id="ruralDistance"></p>
+            </div>
+            <div id="highwayContainer">
+              <img src="" alt="" id="highwayImg" />
+              <p id="highwayLabel"></p>
+              <p id="highwayStat"></p>
+              <p id="highwayDistance"></p>
+            </div>
+            <div id="peripheralContainer">
+              <img src="" alt="" id="peripheralImg" />
+              <p id="peripheralLabel"></p>
+              <p id="peripheralStat"></p>
+              <p id="peripheralDistance"></p>
+            </div>
+          </section>
+          <h4>Stationnement</h4>
+          <section id="parkingStats" class="data-container">
+            <!-- nb de fois OU fréquence chaque stationnement -->
+            <div id="perpendicularContainer">
+              <img src="" alt="" id="perpendicularImg" />
+              <p id="perpendicularLabel"></p>
+              <p id="perpendicularStat"></p>
+              <p id="perpendicularCount"></p>
+            </div>
+            <div id="angledContainer">
+              <img src="" alt="" id="angledImg" />
+              <p id="angledLabel"></p>
+              <p id="angledStat"></p>
+              <p id="angledCount"></p>
+            </div>
+            <div id="parallelContainer">
+              <img src="" alt="" id="parallelImg" />
+              <p id="parallelLabel"></p>
+              <p id="parallelStat"></p>
+              <p id="parallelCount"></p>
+            </div>
+          </section>
+          <h4>Autres manoeuvres</h4>
+          <section id="manoeuverStats" class="data-container">
+            <!-- nb de fois OU fréquence chaque manoeuver -->
+            <div id="uturnContainer">
+              <img src="" alt="" id="uturnImg" />
+              <p id="uturnLabel"></p>
+              <p id="uturnStat"></p>
+              <p id="uturnCount"></p>
+            </div>
+            <div id="hillStartContainer">
+              <img src="" alt="" id="hillStartImg" />
+              <p id="hillStartLabel"></p>
+              <p id="hillStartStat"></p>
+              <p id="hillStartCount"></p>
+            </div>
+            <div id="emergencyStopContainer">
+              <img src="" alt="" id="emergencyStopImg" />
+              <p id="emergencyStopLabel"></p>
+              <p id="emergencyStopStat"></p>
+              <p id="emergencyStopCount"></p>
+            </div>
+            <div id="roundaboutContainer">
+              <img src="" alt="" id="roundaboutImg" />
+              <p id="roundaboutLabel"></p>
+              <p id="roundaboutStat"></p>
+              <p id="roundaboutCount"></p>
+            </div>
+          </section>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <nav>
+        <ul>
+          <li>
+            <a href="../index.html">Page d'accueil</a>
+          </li>
+          <li>
+            <a href="./SessionsOverview.html">Voir les sessions enregistrée</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <div id="dataStatsModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2></h2>
+        <p id=""></p>
+        <a href=""></a>
+        <a href=""></a>
+      </div>
+    </div>
+    <script type="module" src="../js/dataStatsInit.js"></script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LPDWCar - Saisie de session</title>
+    <link rel="stylesheet" href="../css/main-layout.css" />
+    <link rel="stylesheet" href="../css/data-entry.css" />
+    <link rel="stylesheet" href="../css/with-icons.css" />
+  </head>
+  <body>
+    <header>
+      <hgroup>
+        <h1>LPDWCar</h1>
+        <p>Saisie d'une nouvelle session de conduite</p>
+      </hgroup>
+    </header>
+    <main>
+      <input type="hidden" id="sessionId" name="sessionId" value="" />
+      <form action="" id="sessionForm">
+        <section id="sessionMainInfos">
+          <h2 class="form__heading">Général</h2>
+          <fieldset class="main-fieldset date-select">
+            <h3 class="form__heading">Date du trajet</h3>
+            <fieldset class="sub-fieldset date-select date-select--start">
+              <label for="startDateSelect">Début</label
+              ><!--
+          --><select name="startDateSelect" id="startDateSelect" required>
+                <option value="">--</option>
+                <option value="setDate">Maintenant</option>
+                <option value="setNow">Choisir date</option>
+              </select>
+            </fieldset>
+            <fieldset class="sub-fieldset date-select date-select--end">
+              <label for="endDateSelect">Fin</label
+              ><!--
+          --><select name="endDateSelect" id="endDateSelect" required>
+                <option value="">--</option>
+                <option value="setDate">Maintenant</option>
+                <option value="setNow">Choisir date</option>
+              </select>
+            </fieldset>
+          </fieldset>
+          <fieldset>
+            <h3 class="form__heading">Parcours</h3>
+            <label for="travelDistance">Distance parcourue :</label>
+            <input
+              type="number"
+              id="travelDistance"
+              name="travelDistance"
+              required
+            />
+            <br />
+            <label for="departureCoordinates">Position de départ :</label>
+            <input
+              type="text"
+              id="departureCoordinates"
+              name="departureCoordinates"
+              placeholder="Adresse ou coordonnées"
+              title="Veuillez saisir une adresse ou des coordonnées GPS"
+              data-source="navigator"
+              class="pac-target-input"
+              autocomplete="off"
+              data-lat=""
+              data-lng=""
+            /><button type="button" id="getDeparturePositionButton">
+              Obtenir les coordonnées de départ
+            </button>
+            <br />
+            <label for="destinationCoordinates">Position d'arrivée :</label>
+            <input
+              type="text"
+              id="destinationCoordinates"
+              name="destinationCoordinates"
+              placeholder="Adresse ou coordonnées"
+              title="Veuillez saisir une adresse ou des coordonnées GPS"
+              data-source="navigator"
+              class="pac-target-input"
+              autocomplete="off"
+              data-lat=""
+              data-lng=""
+            /><button type="button" id="getDestinationPositionButton">
+              Obtenir les coordonnées d'arrivée
+            </button>
+          </fieldset>
+          <button type="button" id="calculateBtn">
+            Calcul de l'itinéraire
+          </button>
+        </section>
+        <section id="conditionsInfos">
+          <fieldset>
+            <legend>Conduite de nuit</legend>
+            <input type="checkbox" name="nightDriving" id="nightDriving" />
+          </fieldset>
+        </section>
+      </form>
+      <button type="button" id="submitFormButton">Enregistrer</button>
+    </main>
+    <footer>
+      <nav>
+        <ul>
+          <li>
+            <a href="../index.html">Page d'accueil</a>
+          </li>
+          <li>
+            <a href="SessionsOverview.html">Voir les sessions enregistrée</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <div id="sessionModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2></h2>
+        <p id=""></p>
+        <a href=""></a>
+        <a href=""></a>
+      </div>
+    </div>
+    <script type="module" src="../js/dataEntryInit.js"></script>
+  </body>
+</html>
